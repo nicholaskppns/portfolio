@@ -4,14 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nicholas Kuppens Portfolio</title>
+    <link rel="stylesheet" href="reset.css" media="screen"/>
     <!-- Bootstrap CSS -->
-     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
      <!-- Bootstrap CSS icons: https://icons.getbootstrap.com/#usage -->
      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
      <!-- JavaScript: Bootstrap Bundle with Popper -->
-     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous" defer>
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="CSS/style.css">
+    <script type="text/JavaScript" src=".js/darkmode.js" defer></script>
+    <!-- Leaflet JS for maps -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+     <!--Leaflet JS-->
+     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
+     <style>
+      #map { height: 100px; }
+     </style>
 </head>
 
 <body class=" border-0">
@@ -31,13 +43,28 @@
         <li class="nav-item">
           <a class="nav-link" href="index.html">About</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="projecten.html">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="projecten.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Projecten
           </a>
+          <ul class="dropdown-menu grey">
+            <li><a class="dropdown-item" href="projecten.html">Overzicht projecten</a></li>
+            <li><a class="dropdown-item" href="project1.html">Project: Homelab</a></li>
+            <li><a class="dropdown-item" href="project2.html">Project: Webdesign</a></li>
+            <li><a class="dropdown-item" href="project3.html">Project: Python</a></li>
+            <li><a class="dropdown-item" href="project4.html">Project: CCNA</a></li>
+            <li><a class="dropdown-item" href="project5.html">Project: Rubies</a></li>
+            <li><a class="dropdown-item" href="project6.html">Project: NAS</a></li>
+          </ul>
         </li>
         <li class="nav-item">
           <a class="nav-link active" href="contact.html" aria-current="page">Contact</a>
+        </li>
+        <li>
+          <button id="theme-switch" class="theme-switch-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#e3e3e3" viewBox="0 -960 960 960"><path d="M480-120q-150 0-255-105T120-480t105-255 255-105q14 0 27.5 1t26.5 3q-41 29-65.5 75.5T444-660q0 90 63 153t153 63q55 0 101-24.5t75-65.5q2 13 3 26.5t1 27.5q0 150-105 255T480-120"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#e3e3e3" viewBox="0 -960 960 960"><path d="M480-280q-83 0-141.5-58.5T280-480t58.5-141.5T480-680t141.5 58.5T680-480t-58.5 141.5T480-280M200-440H40v-80h160zm720 0H760v-80h160zM440-760v-160h80v160zm0 720v-160h80v160zM256-650l-101-97 57-59 96 100zm492 496-97-101 53-55 101 97zm-98-550 97-101 59 57-100 96zM154-212l101-97 55 53-97 101z"/></svg>
+          </button>
         </li>
       </ul>
       
@@ -51,24 +78,74 @@
     </header>
     <div class="container-fluid">
       <div class="row">
-        <main class="col-12">
-           <h1 class="title-color">Contact</h1>
-          <p>Contact.html, work in progress</p>
-
-          
-          
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis repellendus culpa voluptatem quibusdam ut molestiae, est vitae sit alias ratione ducimus, temporibus aperiam! Totam aliquid consectetur pariatur libero ratione tenetur?</p>
-        </main>
-      </div>
+        <aside class="col-12 col-md-2 order-last order-md-first text-start p-3 custom-aside">
+          <h2 class="text-uppercase fs-5 fw-bolder pt-3 text-center title-color">contact</h2>
+          <figure><img src="Assets/images/CV_foto.jpg" alt="Profile Picture" class="img-fluid rounded mx-auto d-block" width="150" height="150"></figure>
+          <p class="fs-6 text-center">Student AP Hogeschool<br>
+          <a href="mailto:nicholaskuppens@gmail.com" class="fs-6 text-break title-color text-center">nicholaskuppens@gmail.com</a><br>
+          </p>
+          <ul class="list-inline socials text-center">
+            <li class="list-inline-item">
+              <a href="https://linkedin.com/in/nicholas-kuppens-277654295" target="_blank" rel="noopener">
+              <i class="bi bi-linkedin title-color fs-5"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://github.com/nicholaskppns" target="_blank" rel="noopener">
+              <i class="bi bi-github title-color fs-5"></i>
+              </a>
+            </li>
+          </ul>
+        </aside>
+        <main class="col-12 col-md-10 order-first order-md-last">
+           <section id="contact" class="row">
+            <div class="col-12">
+              <h1 class="title-color">Contact me</h1>
+              <p>Ik sta altijd open voor nieuwe kansen en samenwerkingen. Voel je vrij om contact met mij op te nemen via e-mail, LinkedIn of via het formulier onderaan.</p>
+            </div>
+             <div class="col-12 col-md-6">
+      <form action="mailto:nicholaskuppens@gmail.com" method="post" enctype="text/plain">
+        <fieldset>
+          <div class="mb-3">
+            <label for="name" class="form-label title-color">Naam:</label>
+            <input type="text" class="form-control" id="name" name="name" required>
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label title-color">E-mail:</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+          </div>
+          <div class="mb-3">
+            <label for="message" class="form-label title-color">Bericht:</label>
+            <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Verzenden</button>
+        </fieldset>
+      </form>
     </div>
-    <footer class="footer mt-auto">
-      <div class="container-fluid">
-      <article class="row text-center">
-        <p>Copyright © Nicholas Kuppens 2025</p>
-      </article>
-      </div>
-
+    <div class="col-12 col-md-6">
+      <div id="map" style="height: 400px;"></div>
+    </div>
+  </section>
+</main>
+    </div>
+  </div>
+    <footer class="footer mt-auto py-3 text-center">
+      <p class="mb-0">Copyright © Nicholas Kuppens 2025</p>
     </footer>
     
 </body>
+<script>
+  // Initialize the map
+  var map = L.map('map').setView([51.2194, 4.4025], 11); // Coordinates for Antwerp, Belgium
+
+  // Add OpenStreetMap tiles
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+  }).addTo(map);
+
+  // Add a marker
+  L.marker([51.284709, 4.442854]).addTo(map)
+      .bindPopup('Nicholas Kuppens<br>Student AP Hogeschool')
+      .openPopup();
+</script>
 </html>

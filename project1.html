@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nicholas Kuppens Portfolio</title>
+    <link rel="stylesheet" href="reset.css" media="screen"/>
     <!-- Bootstrap CSS -->
-     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
      <!-- Bootstrap CSS icons: https://icons.getbootstrap.com/#usage -->
      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
      <!-- JavaScript: Bootstrap Bundle with Popper -->
-     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous" defer>
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="CSS/style.css">
+    <script type="text/JavaScript" src=".js/darkmode.js" defer></script>
 </head>
 
 <body class=" border-0">
@@ -31,13 +32,28 @@
         <li class="nav-item">
           <a class="nav-link" href="index.html">About</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="projecten.html" aria-current="page">
+        <li class="nav-item dropdown">
+          <a class="nav-link active dropdown-toggle" href="projecten.html" role="button" data-bs-toggle="dropdown" aria-expanded="false" aria-current="page">
             Projecten
           </a>
+          <ul class="dropdown-menu grey">
+            <li><a class="dropdown-item" href="projecten.html">Overzicht projecten</a></li>
+            <li><a class="dropdown-item" href="project1.html">Project: Homelab</a></li>
+            <li><a class="dropdown-item" href="project2.html">Project: Webdesign</a></li>
+            <li><a class="dropdown-item" href="project3.html">Project: Python</a></li>
+            <li><a class="dropdown-item" href="project4.html">Project: CCNA</a></li>
+            <li><a class="dropdown-item" href="project5.html">Project: Rubies</a></li>
+            <li><a class="dropdown-item" href="project6.html">Project: NAS</a></li>
+          </ul>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="contact.html">Contact</a>
+        </li>
+        <li>
+          <button id="theme-switch" class="theme-switch-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#e3e3e3" viewBox="0 -960 960 960"><path d="M480-120q-150 0-255-105T120-480t105-255 255-105q14 0 27.5 1t26.5 3q-41 29-65.5 75.5T444-660q0 90 63 153t153 63q55 0 101-24.5t75-65.5q2 13 3 26.5t1 27.5q0 150-105 255T480-120"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#e3e3e3" viewBox="0 -960 960 960"><path d="M480-280q-83 0-141.5-58.5T280-480t58.5-141.5T480-680t141.5 58.5T680-480t-58.5 141.5T480-280M200-440H40v-80h160zm720 0H760v-80h160zM440-760v-160h80v160zm0 720v-160h80v160zM256-650l-101-97 57-59 96 100zm492 496-97-101 53-55 101 97zm-98-550 97-101 59 57-100 96zM154-212l101-97 55 53-97 101z"/></svg>
+          </button>
         </li>
       </ul>
       
@@ -54,12 +70,12 @@
         <aside class="col-12 col-md-2 order-last order-md-first text-start p-3 custom-aside">
           <h2 class="text-uppercase fs-5 fw-bolder pt-3 text-center title-color">contact</h2>
           <figure><img src="Assets/images/CV_foto.jpg" alt="Profile Picture" class="img-fluid rounded mx-auto d-block" width="150" height="150"></figure>
-          <p class="fs-6">Student AP Hogeschool<br>
-          <a href="mailto:nicholaskuppens@gmail.com" class="fs-6 text-break title-color">nicholaskuppens@gmail.com</a><br>
+          <p class="fs-6 text-center">Student AP Hogeschool<br>
+          <a href="mailto:nicholaskuppens@gmail.com" class="fs-6 text-break title-color text-center">nicholaskuppens@gmail.com</a><br>
           </p>
-          <ul class="list-inline socials">
+          <ul class="list-inline socials text-center">
             <li class="list-inline-item">
-              <a href="www.linkedin.com/in/nicholas-kuppens-277654295" target="_blank" rel="noopener">
+              <a href="https://linkedin.com/in/nicholas-kuppens-277654295" target="_blank" rel="noopener">
               <i class="bi bi-linkedin title-color fs-5"></i>
               </a>
             </li>
@@ -71,22 +87,57 @@
           </ul>
         </aside>
         <main class="col-12 col-md-10 order-first order-md-last">
-         <h1 class="title-color">Project 1</h1>
-          <p>Project 1 work in progress</p>
+         <h1 class="title-color">Homelab</h1>
+          <section id="Onderzoek" class="row align-items-center">
+            <div class="col-12 col-md-6">
+              <h2 class="title-color">Onderzoek</h2>
+              <p>Ik speel al een tijdje met het idee om een homelab te maken. Zowel om ervaring op te doen als om mijn netwerkvaardigheden te verbeteren. Het runnen van meerdere virtuele machines en het opzetten van een veilige en efficiënte netwerkstructuur zijn enkele van de uitdagingen die ik wil aanpakken. Het is een goede basis om te leren werken met al deze technologieën.</p>
+              <p>Daarnaast zijn er nog andere voordelen zoals een mediaserver bijvoorbeeld. De hoeveelheid foto's stappelen jaar na jaar op, net zoals de collectie media die je graag consumeert. De prijzen voor cloud opslag blijven stijgen, waardoor het aantrekkelijker wordt om je eigen opslagoplossing te hebben. Een goed werkend systeem van 2de hands onderdelen kan op lange termijn zelfs goedkoper zijn dan cloudopslag. Daarnaast is het hebben van backups geen overbodige luxe. Niet alleen van je computersystemen maar ook je fysieke media die je door de jaren heen hebt verzameld.</p>
+              <p>Momenteel zit ik spijtig genoeg nog in de onderzoeksfase, het bekijken van wat er allemaal nodig is om te starten met een homelab en welke hardware en software het beste bij mijn behoeften past. Daarnaast ben ik momenteel prijzen aan het bekijken en aan het rondvragen voor PC onderdelen die mensen niet meer nodig hebben om die dan over te nemen. Als student is geld niet altijd even ruim beschikbaar.</p>
+            </div>
+            <div class="col-12 col-md-6">
+              <figure>
+                <img src="Assets/images/Homelab2.png" alt="Homelab Planning" class="img-fluid rounded mx-auto d-block w-50">
+                <figcaption class="text-center mt-2">Een voorbeeld van een rack</figcaption>
+              </figure>
+            </div>
+            </section>
+            <section id="Planning" class="row align-items-center">
+            <div class="col-12 col-md-6">
+              <h2 class="title-color">Planning</h2>
+              <p>Mijn plan is om tegen het einde van volgend jaar mijn homelab operationeel te hebben. Ik ben momenteel bezig met het verzamelen van de benodigde hardware en het opzetten van een basisnetwerkstructuur. Zodra alles is opgezet, zal ik beginnen met het installeren van de benodigde software en het configureren van de virtuele machines.</p>
+              <p>Ik ben van plan om regelmatig updates te delen over mijn voortgang en eventuele uitdagingen die ik tegenkom tijdens het proces. Dit zal niet alleen helpen om mijn eigen ervaringen te documenteren, maar kan ook nuttig zijn voor anderen die geïnteresseerd zijn in het opzetten van hun eigen homelab.</p>
+              <p>Op lange termijn hoop ik mijn homelab uit te breiden met meer geavanceerde functies en mogelijkheden, zoals geautomatiseerde back-ups, geavanceerde netwerkbeveiliging en mogelijk zelfs het hosten van mijn eigen webdiensten.</p>
+            </div>
+            <div class="col-12 col-md-6">
+              <figure>
+                <img src="Assets/images/Homelab1.png" alt="Homelab Setup" class="img-fluid rounded mx-auto d-block w-50">
+                <figcaption class="text-center mt-2">Een voorbeeld van een homelab setup</figcaption>
+              </figure>
+            </div>
+            </section>
+            <section id="updates" class="row align-items-center">
+              <div class="col-12 col-md-6">
+                <h2 class="title-color">Updates</h2>
+                <p>Als er nog updates volgen dan komen deze hier te staan.<br>
+                  Work in progress...
+                </p>
+              </div>
+              <div class="col-12 col-md-6">
+                <figure>
+                  <img src="Assets/images/underconstruction1.jpg" alt="Coming Soon" class="img-fluid rounded mx-auto d-block w-50" style="max-height: 200px; object-fit: cover;">
+                  <figcaption class="text-center mt-2">Coming Soon</figcaption>
+                </figure>
+              </div>
+
+            </section>
 
           
-          
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis repellendus culpa voluptatem quibusdam ut molestiae, est vitae sit alias ratione ducimus, temporibus aperiam! Totam aliquid consectetur pariatur libero ratione tenetur?</p>
         </main>
       </div>
     </div>
-    <footer class="footer mt-auto">
-      <div class="container-fluid">
-      <article class="row text-center">
-        <p>Copyright © Nicholas Kuppens 2025</p>
-      </article>
-      </div>
-
+  <footer class="footer mt-auto py-3 text-center">
+      <p class="mb-0">Copyright © Nicholas Kuppens 2025</p>
     </footer>
     
 </body>

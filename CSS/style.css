@@ -1,11 +1,50 @@
-:root {
+:root{
+  --base-color: white;
+  --base-variant: #e8e9ed;
+  --base-variant-transparent: rgba(232, 233, 237, 0.8);
+  --text-color: #111528;
+  --secondary-text: #232738;
   --theme-active-color: rgb(12, 71, 25);
 }
+.darkmode{
+  --base-color: #121212;
+  --base-variant: #4d4d4d;
+  --base-variant-transparent: rgba(30, 30, 30, 0.8);
+  --text-color: #c5c8cd;
+  --secondary-text: #a1a4ab;
+  --theme-active-color: rgb(119, 136, 88);
+}
 
+#theme-switch{
+  height: 40px;
+  width: 40px;
+  padding: 0;
+  border-radius: 50%;
+  background-color: var(--base-variant);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#theme-switch svg{
+  fill: var(--text-color);
+}
+#theme-switch svg:last-child{
+  display: none;
+}
+.darkmode #theme-switch svg:first-child{
+  display: none;
+}
+.darkmode #theme-switch svg:last-child{
+  display: block;
+}
 body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background-color: var(--base-color);
+  color: var(--text-color);
 }
 
 main {
@@ -14,16 +53,29 @@ main {
 
 .footer {
   margin-top: auto;
+  background-color: var(--base-variant);
+  color: var(--text-color);
 }
 
 .grey {
-    color: #c5c8cdBF;
-    background-color: #c5c8cdBF;
+    color: var(--text-color);
+    background-color: var(--base-variant-transparent);
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
     border-bottom: 1px solid rgba(59, 57, 57, 0.3);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     z-index: 1000;
+}
+.grey .dropdown-menu {
+    color: var(--text-color);
+    background-color: var(--base-variant);
+}
+.grey .dropdown-item {
+    color: var(--text-color);
+}
+.grey .dropdown-item:hover, .grey .dropdown-item:focus {
+    background-color: rgba(119, 136, 88, 0.1);
+    color: #778858;
 }
 
 .navbar .nav-link {
@@ -65,6 +117,7 @@ main {
     border-right: 2px solid rgba(119, 136, 88, 0.3) !important;
     min-height: 100vh;
     box-shadow: -4px 0 8px -2px rgba(0, 0, 0, 0.1);
+    background-color: var(--base-variant);
 }
 
 .custom-carousel .carousel-item {
@@ -156,7 +209,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start; /* push content toward top */
+  justify-content: flex-end; /* push content toward top */
   gap: .35rem;
   padding: .6rem;
   text-align: center;
