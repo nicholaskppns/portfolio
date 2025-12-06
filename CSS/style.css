@@ -1,11 +1,21 @@
+
+/* Basis kleuren */
+
 :root{
   --base-color: white;
-  --base-variant: #e8e9ed;
+  --base-variant: rgba(232, 233, 237);
   --base-variant-transparent: rgba(232, 233, 237, 0.8);
   --text-color: #111528;
   --secondary-text: #232738;
   --theme-active-color: rgb(12, 71, 25);
+  --title-color: rgba(119, 136, 88, 1);
+  --title-color-highlight: rgb(145, 180, 81);
+  --focus-color: rgba(115, 150, 49, 0.966);
+  --title-color-transparant: rgba(119, 136, 88, 0.8);
 }
+
+/* Donkere modus */
+
 .darkmode{
   --base-color: #121212;
   --base-variant: #4d4d4d;
@@ -13,6 +23,10 @@
   --text-color: #c5c8cd;
   --secondary-text: #a1a4ab;
   --theme-active-color: rgb(119, 136, 88);
+  --title-color: rgb(160, 184, 111);
+  --title-color-highlight: rgb(191, 236, 106);
+  --focus-color: rgba(166, 241, 27, 0.555);
+  --title-color-transparant: rgb(160, 184, 111, 0.8); 
 }
 
 #theme-switch{
@@ -21,14 +35,21 @@
   padding: 0;
   border-radius: 50%;
   background-color: var(--base-variant);
-  border: none;
+  border: 2px solid var(--title-color);
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 #theme-switch svg{
-  fill: var(--text-color);
+  fill: var(--title-color);
+}
+#theme-switch:hover svg {
+  fill: var(--title-color-highlight)
+}
+#theme-switch:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--focus-color);
 }
 #theme-switch svg:last-child{
   display: none;
@@ -39,6 +60,39 @@
 .darkmode #theme-switch svg:last-child{
   display: block;
 }
+/* Algemene kleuren layout */
+
+.figure-border {
+  box-shadow: 0 0 0 3px var(--title-color-transparant);
+  max-width: 500px;
+}
+
+.list-group {
+  border: 2px solid var(--title-color)
+}
+
+.list-group-item {
+  border: 2px solid var(--title-color);
+  background-color: var(--base-variant);
+  color: var(--text-color)
+}
+
+.form-control:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--focus-color);
+}
+
+.btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--focus-color);
+}
+
+a:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--focus-color);
+}
+
+
 body {
   min-height: 100vh;
   display: flex;
@@ -58,38 +112,64 @@ main {
 }
 
 .grey {
-    color: var(--text-color);
-    background-color: var(--base-variant-transparent);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-    border-bottom: 1px solid rgba(59, 57, 57, 0.3);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
+  color: var(--text-color);
+  background-color: var(--base-variant-transparent);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-bottom: 1px solid rgba(59, 57, 57, 0.3);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
 }
 .grey .dropdown-menu {
-    color: var(--text-color);
-    background-color: var(--base-variant);
+  color: var(--text-color);
+  background-color: var(--base-variant);
 }
 .grey .dropdown-item {
-    color: var(--text-color);
+  color: var(--text-color);
 }
 .grey .dropdown-item:hover, .grey .dropdown-item:focus {
-    background-color: rgba(119, 136, 88, 0.1);
-    color: #778858;
+  background-color: rgba(119, 136, 88, 0.1);
+  color: #778858;
+}
+.grey .dropdown-item:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--focus-color);
+}
+.grey .dropdown-item.active{
+  background-color: rgba(119, 136, 88, 0.1);
+  color: #9bc947;
 }
 
 .navbar .nav-link {
-  color: #778858;
+  color: var(--title-color)
 }
 .navbar .nav-link:hover {
-  color: #99aa70; 
+  color: var(--title-color-highlight) 
+}
+.navbar .nav-link:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--focus-color);
 }
 .navbar .nav-link.active {
   color: var(--theme-active-color);
 }
+/* Titel kleuren en hun variaties */
+
 .title-color {
-  color: rgba(119, 136, 88, 1);  
+  color: var(--title-color);
+  text-decoration: none;  
 }
+.title-color-contrast {
+  color: rgb(145, 180, 81);
+
+}
+.title-color-link:hover{
+  color: var(--title-color-highlight);
+
+}
+
+
+/* Aanpassingen aan navbar-toggler */
 
 .navbar .navbar-toggler-icon {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28119, 136, 88, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
@@ -104,6 +184,12 @@ main {
 .navbar-toggler:hover {
   border-color: #99aa70; 
 }
+.navbar-toggler:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--focus-color);
+}
+
+/*Aside aanpassingen*/
 
 .custom-aside {
     border-right: 3px solid rgba(119, 136, 88, 0.3);
@@ -111,162 +197,105 @@ main {
     background-color: var(--base-variant);
 }
 
-.custom-carousel .carousel-item {
-    height: 350px; /* same height for all slides — adjust as needed */
-}
-.custom-carousel .carousel-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* maintain fill and crop uniformly */
-    display: block;
-}
-
-.container {
-  position: relative;
-  width: 50%;
-}
-
-.image {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-.overlay {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  width: 100%;
-  opacity: 0;
-  transition: .5s ease;
-  background-color: #008CBA;
-}
-
-.container:hover .overlay {
-  opacity: 1;
-}
-
-.text {
-  color: white;
-  font-size: 20px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  text-align: center;
-}
+/*Project kaarten met overlay */
 
 .project-card {
   position: relative;
-  overflow: hidden;
-  display: block;     /* fill the column width */
   width: 100%;
-  max-width: 420px;   /* optional: limit card width in larger columns */
-  margin-left: auto;
-  margin-right: auto;
+  max-width: 400px;
 }
 
-/* Fixed responsive heights — adjust values to taste */
-.project-card img {
+.project-card a.d-block {
   display: block;
-  width: 100%;
-  height: 200px;      /* desktop default height */
-  object-fit: cover;  /* fill and crop uniformly */
+  position: relative;
+  overflow: visible;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
+  border-radius: 0.25rem;
 }
 
-/* Smaller screens */
-@media (max-width: 767.98px) {
-  .project-card img {
-    height: 140px;
-  }
+.project-card a.d-block:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--focus-color);
 }
 
-/* Larger screens */
-@media (min-width: 1200px) {
-  .project-card img {
-    height: 260px;
-  }
+.project-card a.d-block:focus .overlay-img{
+  outline: none;
+  box-shadow: 0 0 0 3px var(--focus-color);
+  opacity: 1;
 }
 
-/* Overlay fills the exact card area */
-.project-card .overlay {
+.project-img {
+  display: block;
+  width:100%;
+  height: 300px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.overlay-img {
   position: absolute;
-  inset: 0;                /* top:0; right:0; bottom:0; left:0 */
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6 );
+  color: #ffffff;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-end; /* push content toward top */
-  gap: .35rem;
-  padding: .6rem;
-  text-align: center;
-  background: rgba(0,0,0,0.45);
-  color: #fff;
+  justify-content: center;
   opacity: 0;
-  transform: translateY(8px);
-  transition: opacity .25s ease, transform .25s ease;
-  pointer-events: none;
-  z-index: 2;
-}
+  transition: opacity 0.25s;
 
-/* reset any global positioning/transform for title and paragraph */
-.project-card .overlay .text,
-.project-card .overlay p {
-  position: static !important;
-  transform: none !important;
-  display: block;
-  margin: 0;
-  width: 100%;
 }
-
-/* title above paragraph */
-.project-card .overlay .text {
-  order: 0;
-  font-weight: 700;
-  font-size: 1rem;
-  padding-top: 0;
-}
-
-.project-card .overlay p {
-  order: 1;
-  margin-top: .25rem;
-  font-size: .9rem;
-  line-height: 1.2;
-}
-
-/* show overlay on hover/focus */
-.project-card:hover .overlay,
-.project-card:focus-within .overlay {
+.overlay-img:hover {
   opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
 }
 
-/* small niceties: reset margins inside overlay */
-.project-card .overlay .text,
-.project-card .overlay p {
-  margin: 0;
-  width: 100%;
+/* Hoogte aanpassing voor slideshow */
+
+.carousel-img {
+  height: 400px;
+  object-fit: cover;
 }
 
-/* optional: slightly pull the paragraph up under the title */
-.project-card .overlay p {
-  margin: 0;
-  margin-top: 0.15rem;
-  font-size: 0.9rem;
+.carousel-project {
+  max-height: 600px;
+  object-fit: cover;
 }
 
-/* ensure mx-auto works for centering */
-.project-card.mx-auto {
-  margin-left: auto !important;
-  margin-right: auto !important;
+.slideshow-width {
+  max-width: 1200px;
+  margin:0 auto;
 }
+
+@media (max-width:768px) {
+  .carousel-project {
+    max-height: 400px;
+  }
+}
+
+@media (max-width:576px) {
+  .carousel-project {
+    max-height: 300px;
+  }
+}
+
+
+/* map instellingen */
 
 #map {
   height: 400px;
   width: 100%;
+}
+
+i {
+  font-style: italic;
+}
+
+.project-link {
+  text-decoration: none;
+  font-weight: bold;
+  color: var(--title-color)
+
 }

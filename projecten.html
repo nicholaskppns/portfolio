@@ -4,42 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nicholas Kuppens Portfolio</title>
+    <!--Reset CSS-->
     <link rel="stylesheet" href="CSS/reset.css" media="screen"/>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-     <!-- Bootstrap CSS icons: https://icons.getbootstrap.com/#usage -->
-     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-     <!-- JavaScript: Bootstrap Bundle with Popper -->
+    <!-- Bootstrap CSS icons: https://icons.getbootstrap.com/#usage -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- JavaScript: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <!--Eigen CSS-->  
     <link rel="stylesheet" href="CSS/style.css">
+    <!--Donkere modus-->
     <script type="text/JavaScript" src="js/darkmode.js" defer></script>
+    <!-- Script voor automatisch updaten jaartal -->
+    <script src="js/jaar.js" type="text/JavaScript" defer></script>
 </head>
 
-<body class=" border-0">
+<body class="border-0">
   <header class="sticky-top">
     <nav class="navbar navbar-expand-md container-fluid grey sticky-top"> 
-        <a class="navbar-brand m-0" href="#"><img src="Assets/images/Logo_NK1.png" alt="Logo Nicholas Kuppens" width="100"></a>
+        <a class="navbar-brand m-0" href="index.html"><img src="Assets/images/Logo_NK1.png" alt="Logo Nicholas Kuppens" width="100"></a>
         <button class="navbar-toggler m-1" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 d-flex flex-row gap-5 p-3 justify-content-end">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 d-flex flex-row gap-3 p-3 justify-content-center">
             <li class="nav-item">
-            <a class="nav-link active" href="index.html" aria-current="page">About</a>
+            <a class="nav-link" href="index.html">Home</a>
             </li>
-            <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <li class="nav-item dropdown active">
+            <a class="nav-link active dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Projecten
             </a>
             <ul class="dropdown-menu grey">
-              <li><a class="dropdown-item" href="projecten.html">Overzicht projecten</a></li>
-              <li><a class="dropdown-item" href="project1.html">Project: Homelab</a></li>
-              <li><a class="dropdown-item" href="project2.html">Project: Webdesign</a></li>
-              <li><a class="dropdown-item" href="project3.html">Project: Python</a></li>
-              <li><a class="dropdown-item" href="project4.html">Project: CCNA</a></li>
-              <li><a class="dropdown-item" href="project5.html">Project: Rubies</a></li>
-              <li><a class="dropdown-item" href="project6.html">Project: NAS</a></li>
+              <li><a class="dropdown-item active" href="projecten.html" aria-current="page">Overzicht projecten</a></li>
+              <li><a class="dropdown-item" href="homelab.html">Project: Homelab</a></li>
+              <li><a class="dropdown-item" href="webdesign.html">Project: Webdesign</a></li>
+              <li><a class="dropdown-item" href="modding.html">Project: Modding</a></li>
+              <li><a class="dropdown-item" href="ccna.html">Project: CCNA</a></li>
+              <li><a class="dropdown-item" href="rubies.html">Project: Rubies</a></li>
+              <li><a class="dropdown-item" href="linux.html">Project: Linux</a></li>
             </ul>
             </li>
             <li class="nav-item">
@@ -59,113 +64,116 @@
     <div class="container-fluid">
       <div class="row">
         <aside class="col-12 col-md-2 order-last order-md-first text-start p-3 custom-aside">
-          <h2 class="text-uppercase fs-5 fw-bolder pt-3 text-center title-color">contact</h2>
-          <figure><img src="Assets/images/CV_foto.jpg" alt="Profiel foto" class="img-fluid rounded mx-auto d-block" width="150" height="150"></figure>
-          <p class="fs-6 text-center">Student AP Hogeschool<br>
-          <a href="mailto:nicholaskuppens@gmail.com" class="fs-6 text-break title-color">nicholaskuppens@gmail.com</a><br>
+          <h2 class="text-uppercase fs-5 fw-bolder pt-5 text-center title-color">contact</h2>
+          <figure><img src="Assets/images/CV_foto.jpg" alt="Profiel foto" class="img-fluid rounded mx-auto d-block shadow" width="150" height="150"></figure>
+          <p class="fs-6 text-center">Nicholas Kuppens <br> Student AP Hogeschool<br>
           </p>
           <ul class="list-inline socials text-center">
             <li class="list-inline-item">
+              <a href="mailto:nicholaskuppens@gmail.com" rel="noopener">
+              <i class="bi bi-envelope-at-fill title-color title-color-link fs-5"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
               <a href="https://linkedin.com/in/nicholas-kuppens-277654295" target="_blank" rel="noopener">
-              <i class="bi bi-linkedin title-color fs-5"></i>
+              <i class="bi bi-linkedin title-color title-color-link fs-5"></i>
               </a>
             </li>
             <li class="list-inline-item">
               <a href="https://github.com/nicholaskppns" target="_blank" rel="noopener">
-              <i class="bi bi-github title-color fs-5"></i>
+              <i class="bi bi-github title-color title-color-link fs-5"></i>
               </a>
             </li>
           </ul>
         </aside>
-        <main class="col-12 col-md-10 order-first order-md-last">
-           <section id="overzicht-projecten" class="container-fluid">
+        <main class="col-12 col-md-10 order-first order-md-last ps-md-5">
+           <section id="overzicht-projecten">
             <div class="row">
               <div class="col-12 col-md-6">
-                <h1 class="title-color">Overzicht Projecten</h1>
+                <h1 class="title-color mb-5 mt-5">Overzicht Projecten</h1>
                 <p>Hier kan je een overzicht vinden van alle projecten waar ik momenteel mee bezig ben. Sommige zijn via mijn studie andere zijn persoonlijke projecten. Indien je graag meer wilt te weten komen klik dan verder op de afbeelding</p>
               </div>
             </div>
            </section>
            <section id="projecten" class="container-fluid">
             <div class="row">
-                  <article class="project-card p-2 m-0 mx-auto col-12 col-md-6">
-                    <h2 class="text-center title-color h3">Homelab</h2>
-                    <div class="position-relative">
-                      <a href="project1.html">
-                      <img src="Assets/images/Homelab.png" alt="Homelab project image" class="img-fluid">
-                      <div class="overlay">
-                        <div class="text">Project: Homelab</div>
-                        <p>Tijdens mijn vrije tijd heb ik een persoonlijk homelab opgezet om mijn vaardigheden in systeem- en netwerkbeheer te verbeteren.
+                  <div class="project-card p-2 m-3 col-12 col-md-6">
+                    <h2 class="text-center h3">
+                      <a href="homelab.html" class="title-color title-color-link">Homelab</a>
+                    </h2>
+                    <a href="homelab.html" class="d-block position-relative">
+                      <img src="Assets/images/Homelab.png" alt="Homelab project afbeelding link" class="project-img rounded">
+                      <div class="overlay-img rounded p-3">
+                        <p class="text-center">Tijdens mijn vrije tijd ben ik bezig met een homelab op te zetten om mijn vaardigheden in systeem- en netwerkbeheer te verbeteren.</p>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="project-card p-2 m-3 col-12 col-md-6">
+                    <h2 class="text-center h3">
+                      <a href="webdesign.html" class="title-color title-color-link">Webdesign</a>
+                    </h2>
+                    <a href="webdesign.html" class="d-block position-relative">
+                    <img src="Assets/images/HTML.png" alt="HTML project afbeelding link" class="project-img rounded">
+                    <div class="overlay-img rounded p-3">
+                      <p class="text-center">Voor een schoolproject heb ik een portfolio website ontworpen en ontwikkeld met HTML, CSS en Bootstrap om mijn vaardigheden in webdesign te oefenen.
+                      </p>
+                    </div>
+                  </a>
+                </div>
+                  <div class="project-card p-2 m-3 col-12 col-md-6">
+                    <h2 class="text-center h3">
+                      <a href="modding.html" class="title-color title-color-link">Modding</a>
+                    </h2>
+                    <a href="modding.html" class="d-block position-relative">
+                      <img src="Assets/images/python_code.jpg" alt="Modding project afbeelding link" class="project-img rounded">
+                      <div class="overlay-img rounded p-3">
+                        <p class="text-center">In mijn vrije tijd verdiep ik me in het modden van videogames.
                         </p>
                       </div>
-                      </a>
-                    </div>
-                  </article>
-                  <article class="project-card p-2 m-0 mx-auto col-12 col-md-6">
-                    <h2 class="text-center title-color h3">Webdesign</h2>
-                    <div class="position-relative">
-                    <img src="Assets/images/HTML.png" alt="HTML project image" class="img-fluid">
-                    <div class="overlay">
-                      <div class="text">Project: Webdesign</div>
-                      <p>Voor een schoolproject heb ik een portfolio website ontworpen en ontwikkeld met HTML, CSS en Bootstrap om mijn vaardigheden in webdesign te oefenen.
-                      </p>
-                    </div>
-                  </article>
-                  <article class="project-card p-2 m-0 mx-auto col-12 col-md-6">
-                    <h2 class="text-center title-color h3">Python</h2>
-                    <div class="position-relative">
-                    <img src="Assets/images/python_code.jpg" alt="Python project image" class="img-fluid">
-                    <div class="overlay">
-                      <div class="text">Project: Python</div>
-                      <p>Tijdens mijn opleiding ben ik bezig met python.
-                      </p>
-                    </div>
-                  </article>
-            </div>
-            <div class="row">
-              <article class="project-card p-2 m-0 mx-auto col-12 col-md-6">
-                    <h2 class="text-center title-color h3">CCNA</h2>
-                    <div class="position-relative">
-                      <img src="Assets/images/CCNA.png" alt="CCNA project image" class="img-fluid">
-                      <div class="overlay">
-                        <div class="text">Project: CCNA</div>
-                        <p>Tussendoor probeer ik regelmatig mijn kennis over netwerken te verbeteren door CCNA cursussen te volgen.
+                    </a>
+                  </div>
+                  <div class="project-card p-2 m-3 col-12 col-md-6">
+                    <h2 class="text-center h3">
+                      <a href="ccna.html" class="title-color title-color-link">CCNA</a>
+                    </h2>
+                    <a href="ccna.html" class="d-block position-relative">
+                      <img src="Assets/images/CCNA.png" alt="CCNA project afbeelding link" class="project-img rounded">
+                      <div class="overlay-img rounded p-3">
+                        <p class="text-center">Tussendoor probeer ik regelmatig mijn kennis over netwerken te verbeteren door CCNA cursussen te volgen.
                         </p>
                       </div>
-                    </div>
-                  </article>
-                  <article class="project-card p-2 m-0 mx-auto col-12 col-md-6">
-                    <h2 class="text-center title-color h3">Rubies</h2>
-                    <div class="position-relative">
-                    <img src="Assets/images/Rubies.jpg" alt="Rubies project image" class="img-fluid">
-                    <div class="overlay">
-                      <div class="text">Project: Rubies</div>
-                      <p>Rubies of Eventide is een oude game die ik vroeger vaak speelde. Via virtualisatie kan je nog genieten van elementen van deze game.
-                      </p>
-                    </div>
-                  </article>
-                  <article class="project-card p-2 m-0 mx-auto col-12 col-md-6">
-                    <h2 class="text-center title-color h3">NAS</h2>
-                    <div class="position-relative">
-                    <img src="Assets/images/NAS.jpg" alt="NAS project image" class="img-fluid">
-                    <div class="overlay">
-                      <div class="text">Project: NAS</div>
-                      <p>Bouwen van een NAS (Network Attached Storage) om mijn bestanden centraal op te slaan en toegankelijk te maken via mijn thuisnetwerk.
-                      </p>
-                    </div>
-                  </article>
-
-            </div>
-
+                    </a>
+                  </div>
+                  <div class="project-card p-2 m-3 col-12 col-md-6">
+                    <h2 class="text-center h3">
+                      <a href="rubies.html" class="title-color title-color-link">Rubies</a>
+                    </h2>
+                    <a href="rubies.html" class="d-block position-relative">
+                      <img src="Assets/images/Rubies.jpg" alt="Rubies project afbeelding link" class="project-img rounded">
+                      <div class="overlay-img rounded p-3">
+                        <p class="text-center">Rubies of Eventide is een oude game die ik vroeger vaak speelde. Via virtualisatie kan je nog genieten van elementen van deze game.
+                        </p>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="project-card p-2 m-3 col-12 col-md-6">
+                    <h2 class="text-center h3">
+                      <a href="linux.html" class="title-color title-color-link">Linux</a>
+                    </h2>
+                    <a href="linux.html" class="d-block position-relative">
+                      <img src="Assets/images/NAS.jpg" alt="NAS project afbeelding link" class="project-img rounded">
+                      <div class="overlay-img rounded p-3">
+                        <p class="text-center">Verdiepen in de wereld van verschillende Linux Distro's
+                        </p>
+                      </div>
+                    </a>
+                  </div>
+                </div>
            </section>
-           
-
-          
-
         </main>
       </div>
     </div>
-    <footer class="footer mt-auto py-3 text-center small">&copy; Nicholas Kuppens 2025
+    <footer class="footer mt-auto py-3 text-center small">&copy; Nicholas Kuppens <span id="year" class="small"></span>
     </footer>
     
 </body>
