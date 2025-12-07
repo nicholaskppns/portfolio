@@ -260,7 +260,7 @@ main {
 }
 
 .carousel-project {
-  max-height: 600px;
+  max-height: 700px;
   object-fit: cover;
 }
 
@@ -289,9 +289,13 @@ main {
   width: 100%;
 }
 
+/* font aanpassing */
+
 i {
   font-style: italic;
 }
+
+/* extra CSS toegevoegd voor link in text */
 
 .project-link {
   text-decoration: none;
